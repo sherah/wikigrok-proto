@@ -11,11 +11,15 @@
 	width: 100%;
 }
 
-.answerButtons li{
+.answerButtons li, .bigButton{
 	display: inline;
 	width: 30%;
 	padding: .5em;
 	background-color: #fff;
+}
+
+.gamePrompt h2 {
+	margin-bottom: 15px;
 }
 
 .xOut {
