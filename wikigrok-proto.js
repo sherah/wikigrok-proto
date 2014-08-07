@@ -4,19 +4,26 @@ if (Meteor.isClient) {
   Template.gamePrompt.events({
 
     'click .answerButtons li': function (event) {
-      var answer = event.target.id;
-
-      removeGamePrompt();
       Template.gamePrompt.gameAnswered = true;
-      UI.insert(UI.render(Template.gamePrompt), document.body);
-
+      rerenderGamePrompt();
     },
 
     'click .xOut': function () {
       removeGamePrompt();
+    },
+
+    'click .bigButton': function() {
+      Template.gamePrompt.gameAnswered = false;
+      rerenderGamePrompt();
     }
 
   });
+
+  var rerenderGamePrompt = function(){
+    removeGamePrompt();
+
+    UI.insert(UI.render(Template.gamePrompt), document.body);
+  };
 
   var removeGamePrompt = function(){
 
@@ -26,7 +33,7 @@ if (Meteor.isClient) {
 
   Template.gamePrompt.helpers({
     question: function(){
-      console.log(Template.gamePrompt.gameAnswered);
+
       var questions = [
         "Is Paul Rand a Graphic Designer?",
         "Did Paul Rand win any awards?",
