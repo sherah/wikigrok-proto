@@ -15,7 +15,21 @@ if (Meteor.isClient) {
     'click .bigButton': function() {
       Template.gamePrompt.gameAnswered = false;
       rerenderGamePrompt();
-    }
+    },
+
+    'touchstart .answerButtons li': function (event) {
+      Template.gamePrompt.gameAnswered = true;
+      rerenderGamePrompt();
+    },
+
+    'touchstart .xOut': function () {
+      removeGamePrompt();
+    },
+
+    'touchstart .bigButton': function() {
+      Template.gamePrompt.gameAnswered = false;
+      rerenderGamePrompt();
+    },
 
   });
 
