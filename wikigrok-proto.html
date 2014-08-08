@@ -63,7 +63,7 @@
 	  {{#if gameAnswered}}
 	  	{{> thanks}}
 	  {{else}}
-		<div class="gamePrompt">
+		<div class="gamePrompt animated fadeInUp">
 			<span class="xOut">x</span>
 			<h3>Help Wikipedia</h3>
 			<h2>{{ question }}</h2>
@@ -77,7 +77,7 @@
 </template>
 
 <template name="thanks">
-	<div class="gamePrompt">
+	<div class="gamePrompt animated fadeInUp">
 		<span class="xOut">x</span>
 		<h3>Help Wikipedia</h3>
 		<h2>You just made Wikipedia a little better, thanks!</h2>

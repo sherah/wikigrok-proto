@@ -2,6 +2,9 @@ if (Meteor.isClient) {
   var gameAnswered = false;
 
   Template.gamePrompt.events({
+    'scroll body': function(){
+      console.log('scrolling');
+    },
 
     'click .answerButtons li': function (event) {
       Template.gamePrompt.gameAnswered = true;
@@ -61,7 +64,5 @@ if (Meteor.isClient) {
     },
     gameAnswered: false
   });
-
-
 
 }
