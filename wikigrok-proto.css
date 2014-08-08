@@ -35,3 +35,21 @@
 	border-right: 0;
 	text-shadow: 0 1px rgba(0,0,0,.1);
 }
+
+.mw-headline {
+	padding: 23px;
+}
+
+.section_heading {
+	border-bottom: 1px #ccc solid;
+}
+
+.client-js .section_heading {
+	position: relative;
+	padding-left: 24px;
+	border-bottom: solid 1px #E2E3E4;
+}
+
+.client-js .section_heading, .client-js .content_block {
+	clear: both;
+}
