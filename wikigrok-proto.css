@@ -3,6 +3,9 @@
 	background-color: #DEDEDE;
 	border-top: 2px #555 solid;
 	padding: 1em;
+	position: fixed;
+	z-index: 10;
+	bottom: 0;
 }
 
 .answerButtons {
@@ -56,4 +59,8 @@
 
 .client-js .section_heading, .client-js .content_block {
 	clear: both;
+}
+
+.mediawiki {
+	position: absolute;
 }

@@ -65,4 +65,13 @@ if (Meteor.isClient) {
     gameAnswered: false
   });
 
+  $(window).on('scroll', function() {
+    var y_scroll_pos = window.pageYOffset;
+    var gamePosition = 450;
+
+    if(y_scroll_pos > gamePosition) {
+        $('.gamePrompt').removeClass('hidden');
+    }
+});
+
 }
