@@ -12,21 +12,24 @@ if (Meteor.isClient) {
       removeGamePrompt();
     },
 
-    'click .bigButton': function() {
+    'click .askAgain': function() {
       Template.gamePrompt.gameAnswered = false;
       rerenderGamePrompt();
     },
 
     'touchstart .answerButtons li': function (event) {
+      event.preventDefault();
       Template.gamePrompt.gameAnswered = true;
       rerenderGamePrompt();
     },
 
-    'touchstart .xOut': function () {
+    'touchstart .xOut': function (event) {
+      event.preventDefault();
       removeGamePrompt();
     },
 
-    'touchstart .bigButton': function() {
+    'touchstart .askAgain': function (event) {
+      event.preventDefault();
       Template.gamePrompt.gameAnswered = false;
       rerenderGamePrompt();
     },

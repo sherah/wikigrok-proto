@@ -1,6 +1,6 @@
 .gamePrompt {
 	width: 100%;
-	background-color: #ccc;
+	background-color: #DEDEDE;
 	border-top: 2px #555 solid;
 	padding: 1em;
 }
@@ -11,7 +11,7 @@
 	width: 100%;
 }
 
-.answerButtons li, .bigButton{
+.answerButtons li{
 	display: inline;
 	width: 30%;
 	padding: .5em;
@@ -25,4 +25,13 @@
 .xOut {
 	margin-top: -5px;
 	float: right;
+}
+
+.mw-ui-button.mw-ui-progressive, .mw-ui-button.mw-ui-primary {
+	background: #347bff;
+	color: #fff;
+	border: 1px solid #347bff;
+	border-left: 0;
+	border-right: 0;
+	text-shadow: 0 1px rgba(0,0,0,.1);
 }
