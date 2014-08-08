@@ -2,9 +2,6 @@ if (Meteor.isClient) {
   var gameAnswered = false;
 
   Template.gamePrompt.events({
-    'scroll body': function(){
-      console.log('scrolling');
-    },
 
     'click .answerButtons li': function (event) {
       Template.gamePrompt.gameAnswered = true;
@@ -41,8 +38,8 @@ if (Meteor.isClient) {
 
   var rerenderGamePrompt = function(){
     removeGamePrompt();
-
     UI.insert(UI.render(Template.gamePrompt), document.body);
+    $('.gamePrompt').removeClass('hidden');
   };
 
   var removeGamePrompt = function(){
@@ -67,7 +64,7 @@ if (Meteor.isClient) {
 
   $(window).on('scroll', function() {
     var y_scroll_pos = window.pageYOffset;
-    var gamePosition = 450;
+    var gamePosition = 850;
 
     if(y_scroll_pos > gamePosition) {
         $('.gamePrompt').removeClass('hidden');
