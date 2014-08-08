@@ -44,6 +44,10 @@
 	border-bottom: 1px #ccc solid;
 }
 
+.works {
+	margin-left: 23px;
+}
+
 .client-js .section_heading {
 	position: relative;
 	padding-left: 24px;
