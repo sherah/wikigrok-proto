@@ -11,6 +11,11 @@
 	border-bottom: none;
 }
 
+.gamePrompt .question {
+	border-radius: 5px 5px;
+	border-bottom: 2px #888 solid;
+}
+
 .answerButtons, .optInButtons {
 	list-style-type: none;
 	margin: 15px 0 10px 0;
