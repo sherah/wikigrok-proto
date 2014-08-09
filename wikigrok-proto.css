@@ -49,6 +49,15 @@
 	text-shadow: 0 1px rgba(0,0,0,.1);
 }
 
+.mw-ui-button.mw-ui-constructive {
+	background: #00af89;
+	color: #fff;
+	border: 1px solid #00af89;
+	border-left: 0;
+	border-right: 0;
+	text-shadow: 0 1px rgba(0,0,0,.1);
+}
+
 .mw-headline {
 	padding: 23px;
 }
