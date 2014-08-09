@@ -1,6 +1,7 @@
 if (Meteor.isClient) {
   var gameAnswered = false,
-      gameAccepted = false;
+      gameAccepted = false,
+      numberAsked  = 0;
 
   Template.gamePrompt.events({
     'swipeleft .optIntoGame': function(event){
@@ -19,6 +20,11 @@ if (Meteor.isClient) {
     'click .answerButtons li': function (event) {
       Template.gamePrompt.gameAnswered = true;
       rerenderGamePrompt();
+      if(numberAsked > 1){
+        console.log('dont show thanks');
+      } else {
+        console.log('show the thanks');
+      }
     },
 
     'click .optInButtons li': function (event) {
@@ -63,8 +69,7 @@ if (Meteor.isClient) {
 
     'touchstart .askAgain': function (event) {
       event.preventDefault();
-      Template.gamePrompt.gameAnswered = false;
-      rerenderGamePrompt();
+      askAgain();
     },
 
   });
@@ -79,6 +84,12 @@ if (Meteor.isClient) {
 
     $('.gamePrompt').remove();
 
+  };
+
+  var askAgain = function(){
+    Template.gamePrompt.gameAnswered = false;
+    rerenderGamePrompt();
+    numberAsked += 1;
   };
 
   Template.gamePrompt.helpers({

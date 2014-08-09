@@ -35,8 +35,9 @@
 }
 
 .xOut {
-	margin: -10px -3px;
+	margin: -20px -15px;
 	float: right;
+	padding: 10px;
 }
 
 .mw-ui-button.mw-ui-progressive, .mw-ui-button.mw-ui-primary {
