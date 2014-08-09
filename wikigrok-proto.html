@@ -60,20 +60,36 @@
 </body>
 
 <template name="gamePrompt">
-	  {{#if gameAnswered}}
-	  	{{> thanks}}
-	  {{else}}
-		<div class="gamePrompt hidden animated fadeInUp">
-			<span class="xOut"><i class="fa fa-times fa-lg"></i></span>
-			<h3>Help Wikipedia</h3>
-			<h2>{{ question }}</h2>
-			<ul class="answerButtons">
-				<li id="yes" class="mw-ui-button mw-ui-progressive">Yes</li>
-				<li id="notSure" class="mw-ui-button mw-ui-progressive">Not Sure</li>
-				<li id="no" class="mw-ui-button mw-ui-progressive">No</li>
-			</ul>
-		</div>
-	  {{/if}}
+	{{#if gameAccepted}}
+		{{#if gameAnswered}}
+		  	{{> thanks}}
+		    {{else}}
+				<div class="gamePrompt hidden animated fadeInUp">
+					<span class="xOut"><i class="fa fa-times fa-lg"></i></span>
+					<h2>{{ question }}</h2>
+					<ul class="answerButtons">
+						<li id="yes" class="mw-ui-button mw-ui-progressive">Yes</li>
+						<li id="notSure" class="mw-ui-button mw-ui-progressive">Not Sure</li>
+						<li id="no" class="mw-ui-button mw-ui-progressive">No</li>
+					</ul>
+				</div>
+		    {{/if}}
+	{{else}}
+	  	{{> askToPlayGame}}
+	{{/if}}
+</template>
+
+<template name="askToPlayGame">
+	<div class="gamePrompt hidden animated fadeInUp">
+		<span class="xOut"><i class="fa fa-times fa-lg"></i></span>
+		<h3>Help Wikipedia!</h3>
+		<h4>Would you like to play a game that helps us tag metadata for this article?</h4>
+		<p><em>*we cannot be held responsible if it becomes addictive</em></p>
+		<ul class="optInButtons">
+			<li id="yesOption" class="mw-ui-button mw-ui-progressive">Yes</li>
+			<li id="noOption" class="mw-ui-button mw-ui-progressive">No</li>
+		</ul>
+	</div>
 </template>
 
 <template name="thanks">

@@ -1,11 +1,27 @@
 if (Meteor.isClient) {
-  var gameAnswered = false;
+  var gameAnswered = false,
+      gameAccepted = false;
 
   Template.gamePrompt.events({
 
     'click .answerButtons li': function (event) {
       Template.gamePrompt.gameAnswered = true;
       rerenderGamePrompt();
+    },
+
+    'click .optInButtons li': function (event) {
+      if(event.target.id === "yesOption"){
+        Template.gamePrompt.gameAccepted = true;
+        rerenderGamePrompt();
+      }
+    },
+
+    'touchstart .optInButtons li': function (event) {
+      event.preventDefault();
+      if(event.target.id === "yesOption"){
+        Template.gamePrompt.gameAccepted = true;
+        rerenderGamePrompt();
+      }
     },
 
     'click .xOut': function () {
