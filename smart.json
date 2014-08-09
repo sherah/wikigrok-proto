@@ -1,5 +1,6 @@
 {
   "packages": {
-    "animate-css": {}
+    "animate-css": {},
+    "font-awesome": {}
   }
 }

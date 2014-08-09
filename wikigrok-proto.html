@@ -64,7 +64,7 @@
 	  	{{> thanks}}
 	  {{else}}
 		<div class="gamePrompt hidden animated fadeInUp">
-			<span class="xOut">x</span>
+			<span class="xOut"><i class="fa fa-times fa-lg"></i></span>
 			<h3>Help Wikipedia</h3>
 			<h2>{{ question }}</h2>
 			<ul class="answerButtons">
@@ -78,7 +78,7 @@
 
 <template name="thanks">
 	<div class="gamePrompt animated fadeInUp">
-		<span class="xOut">x</span>
+		<span class="xOut"><i class="fa fa-times"></i></span>
 		<h3>Help Wikipedia</h3>
 		<h2>You just made Wikipedia a little better, thanks!</h2>
 		<div class="answerButtons askAgain mw-ui-button mw-ui-progressive">That was fun, ask me another!</div>

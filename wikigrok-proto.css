@@ -1,11 +1,14 @@
 .gamePrompt {
-	width: 100%;
+	width: 95%;
+	margin: 0 2.5%;
 	background-color: #DEDEDE;
-	border-top: 2px #555 solid;
+	border: 2px #888 solid;
 	padding: 1em;
 	position: fixed;
 	z-index: 10;
 	bottom: 0;
+	border-radius: 5px 5px 0 0;
+	border-bottom: none;
 }
 
 .answerButtons {
@@ -26,7 +29,7 @@
 }
 
 .xOut {
-	margin-top: -10px;
+	margin: -10px -3px;
 	float: right;
 }
 
