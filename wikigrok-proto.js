@@ -13,7 +13,10 @@ if (Meteor.isClient) {
       if(event.target.id === "yesOption"){
         Template.gamePrompt.gameAccepted = true;
         rerenderGamePrompt();
+      } else {
+        removeGamePrompt();
       }
+
     },
 
     'touchstart .optInButtons li': function (event) {
@@ -21,7 +24,10 @@ if (Meteor.isClient) {
       if(event.target.id === "yesOption"){
         Template.gamePrompt.gameAccepted = true;
         rerenderGamePrompt();
+      } else {
+        removeGamePrompt();
       }
+
     },
 
     'click .xOut': function () {
