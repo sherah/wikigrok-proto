@@ -24,24 +24,54 @@ if (Meteor.isClient) {
       rerenderGamePrompt();
     },
 
+    'click #tellMoreOption': function(){
+      renderMoreInfo();
+    },
+
+    'touchstart #tellMoreOption': function(){
+      event.preventDefault();
+      renderMoreInfo();
+    },
+
+    'click .moreInfoButtons': function(){
+      $('.moreInfoBox').addClass('hidden');
+    },
+
+    'touchstart .moreInfoButtons': function(){
+      event.preventDefault();
+      $('.moreInfoBox').addClass('hidden');
+    },
+
+    'click #yesWd': function(){
+
+    },
+
+    'touchstart #yesWd': function(){
+      event.preventDefault();
+    },
+
     'click .optInButtons li': function (event) {
-      if(event.target.id === "yesOption"){
+      if(event.target.id === "yesOption" || event.target.id === 'yesWd'){
+        $('.moreInfo').addClass('hidden');
         Template.gamePrompt.gameAccepted = true;
         rerenderGamePrompt();
+      } else if(event.target.id === "tellMoreOption"){
+        renderMoreInfo();
       } else {
         removeGamePrompt();
       }
     },
 
     'touchstart .optInButtons li': function (event) {
-      event.preventDefault();
-      if(event.target.id === "yesOption"){
+      if(event.target.id === "yesOption" || event.target.id === 'yesWd'){
+        $('.moreInfo').addClass('hidden');
         Template.gamePrompt.gameAccepted = true;
         rerenderGamePrompt();
+      } else if(event.target.id === "tellMoreOption"){
+        renderMoreInfo();
       } else {
         removeGamePrompt();
       }
-
     },
 
     'click .xOut': function () {
@@ -66,6 +96,11 @@ if (Meteor.isClient) {
     UI.insert(UI.render(Template.gamePrompt), document.body);
     Template.gamePrompt.gameAnswered = false;
     $('.gamePrompt').removeClass('hidden');
+  };
+
+  var renderMoreInfo = function(){
+    removeGamePrompt();
+    $('.moreInfoBox').removeClass('hidden');
   };
 
   var removeGamePrompt = function(){
