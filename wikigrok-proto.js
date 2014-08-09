@@ -3,6 +3,18 @@ if (Meteor.isClient) {
       gameAccepted = false;
 
   Template.gamePrompt.events({
+    'swipeleft .optIntoGame': function(event){
+      event.preventDefault();
+      //do 'no' thing
+      removeGamePrompt();
+    },
+
+    'swiperight .optIntoGame': function(event){
+      event.preventDefault();
+      //do 'yes' thing
+      Template.gamePrompt.gameAccepted = true;
+      rerenderGamePrompt();
+    },
 
     'click .answerButtons li': function (event) {
       Template.gamePrompt.gameAnswered = true;
@@ -16,7 +28,6 @@ if (Meteor.isClient) {
       } else {
         removeGamePrompt();
       }
-
     },
 
     'touchstart .optInButtons li': function (event) {
