@@ -11,7 +11,7 @@
 	border-bottom: none;
 }
 
-.gamePrompt.question {
+.gamePrompt {
 	border-radius: 5px 5px;
 	border-bottom: 2px #888 solid;
 	margin-bottom: 10px;

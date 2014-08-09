@@ -62,7 +62,15 @@
 <template name="gamePrompt">
 	{{#if gameAccepted}}
 		{{#if gameAnswered}}
-		  	{{> thanks}}
+		  	<div class="gamePrompt animated fadeInUp">
+				<span class="xOut"><i class="fa fa-times"></i></span>
+				<h3>Thank you!</h3>
+				<h2>You just made Wikipedia a little better!</h2>
+				<ul class="playAgainButtons">
+					<li id="playAgain" class="mw-ui-button mw-ui-progressive">Play Again</li>
+					<li id="quit" class="mw-ui-button mw-ui-progressive">Quit</li>
+				</ul>
+			</div>
 		    {{else}}
 				<div class="gamePrompt question hidden animated fadeInUp">
 					<span class="xOut"><i class="fa fa-times fa-lg"></i></span>
@@ -75,30 +83,17 @@
 				</div>
 		    {{/if}}
 	{{else}}
-	  	{{> askToPlayGame}}
+	  	<div class="gamePrompt optIntoGame hidden animated fadeInUp">
+			<span class="xOut"><i class="fa fa-times fa-lg"></i></span>
+			<h3>Help Wikipedia!</h3>
+			<h4>Would you like to play a game that helps us tag metadata for this article?</h4>
+			<p><em>*we cannot be held responsible if it becomes addictive</em></p>
+			<ul class="optInButtons">
+				<li id="yesOption" class="mw-ui-button mw-ui-progressive">Yes</li>
+				<li id="noOption" class="mw-ui-button mw-ui-progressive">No</li>
+			</ul>
+		</div>
 	{{/if}}
-</template>
-
-<template name="askToPlayGame">
-	<div class="gamePrompt optIntoGame hidden animated fadeInUp">
-		<span class="xOut"><i class="fa fa-times fa-lg"></i></span>
-		<h3>Help Wikipedia!</h3>
-		<h4>Would you like to play a game that helps us tag metadata for this article?</h4>
-		<p><em>*we cannot be held responsible if it becomes addictive</em></p>
-		<ul class="optInButtons">
-			<li id="yesOption" class="mw-ui-button mw-ui-progressive">Yes</li>
-			<li id="noOption" class="mw-ui-button mw-ui-progressive">No</li>
-		</ul>
-	</div>
-</template>
-
-<template name="thanks">
-	<div class="gamePrompt animated fadeInUp">
-		<span class="xOut"><i class="fa fa-times"></i></span>
-		<h3>Help Wikipedia</h3>
-		<h2>You just made Wikipedia a little better, thanks!</h2>
-		<div class="answerButtons askAgain mw-ui-button mw-ui-progressive">That was fun, ask me another!</div>
-	</div>
 </template>
 
 

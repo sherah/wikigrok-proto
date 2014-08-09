@@ -4,27 +4,24 @@ if (Meteor.isClient) {
       numberAsked  = 0;
 
   Template.gamePrompt.events({
-    'swipeleft .optIntoGame': function(event){
-      event.preventDefault();
-      //do 'no' thing
+    //these are messy as hell fix it omg
+
+    'click #quit': function(){
       removeGamePrompt();
     },
 
-    'swiperight .optIntoGame': function(event){
-      event.preventDefault();
-      //do 'yes' thing
-      Template.gamePrompt.gameAccepted = true;
+    'click #playAgain': function(){
       rerenderGamePrompt();
     },
 
-    'click .answerButtons li': function (event) {
-      Template.gamePrompt.gameAnswered = true;
+    'touchstart #quit': function(event){
+      event.preventDefault();
+      removeGamePrompt();
+    },
+
+    'touchstart #playAgain': function(event){
+      event.preventDefault();
       rerenderGamePrompt();
-      if(numberAsked > 1){
-        console.log('dont show thanks');
-      } else {
-        console.log('show the thanks');
-      }
     },
 
     'click .optInButtons li': function (event) {
@@ -51,11 +48,6 @@ if (Meteor.isClient) {
       removeGamePrompt();
     },
 
-    'click .askAgain': function() {
-      Template.gamePrompt.gameAnswered = false;
-      rerenderGamePrompt();
-    },
-
     'touchstart .answerButtons li': function (event) {
       event.preventDefault();
       Template.gamePrompt.gameAnswered = true;
@@ -65,18 +57,14 @@ if (Meteor.isClient) {
     'touchstart .xOut': function (event) {
       event.preventDefault();
       removeGamePrompt();
-    },
-
-    'touchstart .askAgain': function (event) {
-      event.preventDefault();
-      askAgain();
-    },
+    }
 
   });
 
   var rerenderGamePrompt = function(){
     removeGamePrompt();
     UI.insert(UI.render(Template.gamePrompt), document.body);
+    Template.gamePrompt.gameAnswered = false;
     $('.gamePrompt').removeClass('hidden');
   };
 
@@ -84,12 +72,6 @@ if (Meteor.isClient) {
 
     $('.gamePrompt').remove();
 
-  };
-
-  var askAgain = function(){
-    Template.gamePrompt.gameAnswered = false;
-    rerenderGamePrompt();
-    numberAsked += 1;
   };
 
   Template.gamePrompt.helpers({
