@@ -1,6 +1,5 @@
 .gamePrompt {
-	width: 95%;
-	margin: 0 2.5%;
+	margin: 0 2.2%;
 	background-color: #DEDEDE;
 	border: 2px #888 solid;
 	padding: 1em;
@@ -18,7 +17,6 @@
 }
 
 .moreInfoBox {
-	width: 95%;
 	margin: 20px 2.5%;
 	background-color: #DEDEDE;
 	border: 2px #888 solid;
@@ -72,6 +70,10 @@
 	display: block;
 	width: 100%;
 	margin: 4px 0;
+}
+
+.mw-ui-button {
+	padding: .5em .8em !important;
 }
 
 .mw-headline {

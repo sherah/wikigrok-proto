@@ -1,6 +1,7 @@
 {
   "packages": {
     "animate-css": {},
-    "font-awesome": {}
+    "font-awesome": {},
+    "bafa": {}
   }
 }
